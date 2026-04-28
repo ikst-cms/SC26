@@ -1,0 +1,3 @@
+#!/bin/bash
+mpicc -O3 -fopenmp -DOLD_HASH_KEY -DOPT_PSITE -DHybrid -DCLIST -DTIME MPI_C_Driver.c -o MPI_C_Driver.out -lm
+mv MPI_C_Driver.out ../lib
