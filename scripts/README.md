@@ -1,13 +1,11 @@
 
-
-
 ## Purpose
 This folder contains driver scripts and plotting utilities used to reproduce the figures in the performance study. Below are the folder layout and per-figure run instructions.
 
 ## Layout
 - `fig-5,6/` — domain-time scaling driver and plotting script (`domain_time_scaling.sh`, `domain_time_plots.py`)
 - `fig-7,9/` — domain scaling and core-scaling drivers and plotting scripts (`sample_domain_scaling.sh`, `sample_cores_scaling.sh`, `domain_scaling_job.sh`, `core_scaling_job.sh`, `plot-fig-7.py`, `plot-fig-9.py`)
-- `fig-8/` — speedup scaling driver(s) and plotting helpers
+- `fig-8/` — speedup scaling driver(s) and plotting helpers (`run_scripts/job*.sh`, `get_data.sh`, `amdahls_plot.py`)
 - `fig-10/` — swap-distance driver and histogram plotting (`sample_swap_dist_scaling.sh`, `plot-fig-10.py`, `swap-dist-*/` example inputs)
 
 ## How to run 
@@ -54,15 +52,27 @@ python3 plot-fig-9.py
 - Folder: `scripts/fig-8`
 - Purpose: Strong-scaling (speedup) experiment for a HEA 6-component dataset (example: 60×60×60).
 - Core range: 1 up to 512 cores (scripts submit jobs across increasing core counts; use cluster PBS variants as required).
-- Outputs: timing logs per run; post-process to compute speedup relative to single-core baseline.
+- Scripts to run: Submit the individual job scripts located in the `run_scripts/` subdirectory (e.g., `job1.sh`, `job2.sh`, ..., `job512.sh`) to your cluster's job scheduler.
+- Outputs: timing logs per run; 
+- Post-process: Use `get_data.sh` to extract the execution times and compute speedup relative to the single-core baseline.
 - Plot: `amdahls.py` or other helper after collecting timings.
 
 Commands
 
 ```bash
 cd scripts/fig-8
-./job.sh
-python3 amdahls.py
+
+# Submit the jobs to your cluster scheduler (example using PBS/Torque)
+qsub run_scripts/job1.sh
+qsub run_scripts/job2.sh
+# ... submit remaining jobs up to job512.sh ...
+
+# Wait for all jobs to complete, then extract the data
+./get_data.sh
+
+# Plot the results
+python3 amdahls_plot.py
+
 ```
 
 ### Fig. 10 (Swap distance sensitivity)
@@ -81,7 +91,4 @@ cd scripts/fig-10
 ./sample_swap_dist_scaling.sh
 python3 plot-fig-10.py
 ```
-
-
-
 
