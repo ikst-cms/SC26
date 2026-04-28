@@ -8,13 +8,13 @@ Install by
 
 To Execute
 
-From Command prompt write `DBMaker` to lunch the module similarly for `PyCLEX`, `CPyMonC` and `DBRunner`. 
+From Command prompt write `CPyMonC` to launch the module. 
 
 # CPyMonC
 
 Compilation:
 
-- from the main directory `cd Lacos/CPyMonC/C_Frunctions_PyMonC`
+- from the main directory `cd Lacos/CPyMonC/C_Functions_PyMonC`
 - `chmod +x mpi_compile`
 - `./mpi_compile`
 - `cd ../../..`
@@ -32,5 +32,5 @@ Flags:
 
 Notes:
 - For `OpenMP` add flags in `Setup.py` and run setup again
-- For `MPI` add flags in `Lacos/CPyMonC/C_Frunctions_PyMonC` and run the `mpi_compile` script again
+- For `MPI` add flags in `Lacos/CPyMonC/C_Functions_PyMonC` and run the `mpi_compile` script again
 - `MPI Driver binary`: `Lacos/CPyMonC/lib/MPI_C_Driver.out`
