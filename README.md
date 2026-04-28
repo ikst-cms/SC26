@@ -31,6 +31,6 @@ Flags:
 - `OPT_PRE_CLUSTER`: optimises iteration over clusters
 
 Notes:
-- For `OpenMP` add flags in `Setup.py` and run setup again
+- For `OpenMP` add flags in `setup.py` and run setup again
 - For `MPI` add flags in `Lacos/CPyMonC/C_Functions_PyMonC` and run the `mpi_compile` script again
 - `MPI Driver binary`: `Lacos/CPyMonC/lib/MPI_C_Driver.out`
