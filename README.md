@@ -1,16 +1,16 @@
-# Lacos Software/Simulation Package
+# Lacos CPyMonC Python Software/Simulation Package
 
 install_requires= ["python=3.8"]
 
 Install by 
 
-`python -m pip install .`
+```python -m pip install .```
 
 To Execute
 
 From Command prompt write `CPyMonC` to launch the module. 
 
-# CPyMonC
+# CPyMonC MPI-C Module
 
 Compilation:
 
@@ -24,13 +24,12 @@ Flags:
 - Logs:
     - `TIME`: add this to get time in time in hrs for each MC step
     - `CTIME`: add this to get total time for swaps and number of swaps in file:`custom_log` for `mpi`, `custom_no_op` otherwise
-    - `CLIST`: add this to get list sizes in hybrid in file:`custom_list`
+    - `CLIST`: add this to get list sizes in hybrid in file:`custom_list_size` and `list_profile`.
 
 - `Hybrid`: to activate Hybrid optimisation
 - `OPT_PSITE`: optimise the number of psites from 1 site to two sites.
 - `OPT_PRE_CLUSTER`: optimises iteration over clusters
 
 Notes:
-- For `OpenMP` add flags in `setup.py` and run setup again
 - For `MPI` add flags in `Lacos/CPyMonC/C_Functions_PyMonC` and run the `mpi_compile` script again
 - `MPI Driver binary`: `Lacos/CPyMonC/lib/MPI_C_Driver.out`
