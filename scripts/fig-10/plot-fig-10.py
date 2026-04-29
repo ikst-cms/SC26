@@ -38,14 +38,14 @@ threshold_for_labels=[250,500]
 
 fig, axes = plt.subplots(1, 2, figsize=(16, 8), constrained_layout=True)
 
-for ax, ds in zip(axes, swap_dis):
+for ax, ds, th in zip(axes, swap_dis, threshold_for_labels):
     plot_histogram_list_size(
         ax,
         folder_path=f'swap-dist-{ds}',
         swap_dis=ds,
         cores=cores,
         details=details,
-        threshold_for_labels=250
+        threshold_for_labels=th
     )
 
 fig.savefig(
