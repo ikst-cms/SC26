@@ -21,6 +21,8 @@ Compilation:
 
 Flags:
 
+- After the first compilation, rerun the compile step with added flags to rebuild the software.
+
 - Logs:
     - `TIME`: add this to get time in time in hrs for each MC step
     - `CTIME`: add this to get total time for swaps and number of swaps in file:`custom_log` for `mpi`, `custom_no_op` otherwise

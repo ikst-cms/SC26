@@ -6,13 +6,13 @@ with open("README.md", "r") as fh:
 
 # C Module for Monte Carlo Simulation
 C_monte_carlo_module = setuptools.Extension("Lacos.CPyMonC.lib.C_MCinterface", ['Lacos/CPyMonC/C_Functions_PyMonC/C_MCinterface.c'],
-					extra_compile_args=['-fopenmp', '-O3', '-shared', '-fPIC', '-DOLD_HASH_KEY', '-DOPT_PSITE','-CTIME'],
+					extra_compile_args=['-fopenmp', '-O3', '-shared', '-fPIC', '-DOLD_HASH_KEY', '-DOPT_PSITE'],
 					extra_link_args=['-lgomp']
 					) 
 
 # C Module for Monte Carlo Simulation(MPI)
 C_mpi_monte_carlo_module = setuptools.Extension("Lacos.CPyMonC.lib.MPI_C_MCinterface", ['Lacos/CPyMonC/C_Functions_PyMonC/MPI_C_MCinterface.c'],
-					extra_compile_args=['-O3', '-shared', '-fPIC', '-DOLD_HASH_KEY','-CTIME']
+					extra_compile_args=['-O3', '-shared', '-fPIC', '-DOLD_HASH_KEY']
 					)
 with open('VERSION') as version_file:
 	version = version_file.read().strip()
