@@ -17,7 +17,7 @@ if __name__=="__main__":
     details = 'quaternary'
     data = []
     for i in [1000,10000,100000]:
-        avg_list_size,avg_list_exec_time,avg_list_combine_time= read_csv_and_plot(folder_path=f'domain_size_scaling/{i}', domain_size=i, cores=64, details=details)
+        avg_list_size,avg_list_exec_time,avg_list_combine_time= read_csv_and_return_avg(folder_path=f'domain_size_scaling/{i}', domain_size=i, cores=64, details=details)
         data.append([i,64,avg_list_size, avg_list_exec_time, avg_list_combine_time])
 
 
@@ -25,7 +25,7 @@ if __name__=="__main__":
 
     data = []
     for i in [1,2,4,8,16,32,64]:
-        avg_list_size, avg_list_exec_time, avg_list_combine_time = read_csv_and_plot(folder_path=f'cores_scaling/core-{i}', domain_size=10000, cores=i, details=details)
+        avg_list_size, avg_list_exec_time, avg_list_combine_time = read_csv_and_return_avg(folder_path=f'cores_scaling/core-{i}', domain_size=10000, cores=i, details=details)
         data.append([10000,i,avg_list_size, avg_list_exec_time, avg_list_combine_time])
 
 
